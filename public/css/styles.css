@@ -45,6 +45,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0 ;
 }
 
 html {
@@ -77,7 +79,9 @@ body {
 
 .back-image-header{
   background-image: url("../assets/img/aku/bg\ web\ \(2\).png");
-  background-size: 1500px  ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-danger-sekali{
