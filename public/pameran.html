@@ -109,11 +109,12 @@
         </div>
       </nav>
       <header class="masthead w-100 text-white text-center back-image-header" style="min-height: 70vh;">
+        <img class="img-fluid rounded mb-5" src="assets/img/aku/cakee.png" alt=""  style="max-height: 40vh; transform: translateY(-50px);">
         <div class="container d-flex align-items-center flex-column mx-auto">
-            <h1 style="font-size: 2.8rem;">COMING SOON</h1>
-            <h1 style="font-size: 1.4rem; margin: 0px, 2px, 12px, 0px;">Pameran Inovasi dan Teknologi Virtual Hasanuddin Techno Fest#6</h1>
-            <div class="px-5 py-3 border border-white">
-                <p style="font-size: 1.4rem;">
+            <h1 style="font-size: 2.8rem;" id="coming">COMING SOON</h1>
+            <h1 style="font-size: 1.4rem; margin: 0px, 2px, 12px, 0px;">Pameran Inovasi dan Teknologi Virtual Hasanuddin Techno Fest #6</h1>
+            <div class="px-5 pt-2 mt-4 border border-white bg-warning" style="color : #000 !important">
+                <p style="font-size: 1.4rem;" id="demo" style="color : #000 !important" class="fw-bold">
                     <span style="font-size: 2rem;" id="hari"></span>hari 
                     <span style="font-size: 2rem;" id="jam"></span>jam 
                     <span style="font-size: 2rem;" id="menit"></span>menit 
@@ -162,7 +163,7 @@
         <script src="js/scripts.js"></script>
         <script>
             // Set the date we're counting down to
-            var countDownDate = new Date("May 29, 2021 08:00:00").getTime();
+            var countDownDate = new Date("May 29, 2021 09:00:00").getTime();
             
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -179,18 +180,21 @@
               var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
               var seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
+              // If the count down is finished, write some text
+              if (distance < 0) {
+                document.getElementById("coming").style.display = "none";
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = `
+                <a href="https://bit.ly/PameranHTF6" target="_blank" class="fw-bold" style="color : #000 !important">Start Now</a>
+                `;
+              } else {
+
               // Display the result in the element with id="demo"
               document.getElementById("hari").innerHTML =days;
               document.getElementById("jam").innerHTML = "  " + hours;
               document.getElementById("menit").innerHTML = "  " + minutes;
               document.getElementById("detik").innerHTML = "  " + seconds;
             
-              // If the count down is finished, write some text
-              if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = `
-                <a href="./test.html"> Daftar sekarang </a>
-                `;
               }
             }, 1000);
             </script>
